@@ -1,0 +1,55 @@
+.encabezado {
+    background-color: #1B1D1F;
+    margin: 30px 90px;
+    width: 90%;
+    max-height: 30%;
+    border-radius: 30px;
+    position: relative;
+}
+
+.principal-coffee {
+    margin-top: 10px;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)) !important; /* Esto creará columnas que se ajusten al tamaño de las tarjetas */
+    gap: 20px !important; /* Espacio entre las tarjetas */
+    padding: 60px !important; /* Padding alrededor del grid */
+}
+
+.img-content{
+    position: relative;
+    border-radius: 15px;
+    height: 190px;
+    width: auto;
+}
+
+.coffee-cards{
+    margin-top: 20px;
+    max-width: 400px;
+    background-color: #1B1D1F;
+    border-radius: 15px;
+}
+
+.controller-content{
+    margin-top: 5px;
+    display: flex;
+    color: white;
+    margin-top: 15px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-weight: bold;
+    justify-content: space-between; /* Alinea los elementos a los extremos */
+    align-items: center; /* Alinea verticalmente al centro */
+}
+
+.controller-price{
+    background-color: #BEE3CC;
+    color: #111315;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 13px;
+    float: right !important;
+    padding: 2px 8px; /* Añade un poco de padding para mejorar la apariencia */
+    white-space: nowrap; /* Evita que el precio se divida en varias líneas */
+}

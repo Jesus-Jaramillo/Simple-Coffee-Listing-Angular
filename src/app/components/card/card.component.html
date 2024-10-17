@@ -1,0 +1,24 @@
+<div>
+  <div class="encabezado">
+    <div class="principal-coffee">
+      <div *ngFor="let coffees of data">
+        <mat-card class="coffee-cards" appearance="outlined">
+          <img mat-card-image src="{{ coffees.image }}" alt="{{ coffees.name }}" class="img-content">
+          <mat-card-content>
+            <div class="controller-content">
+              <h5> {{ coffees.name }} </h5>
+              <h6 class="controller-price"> {{ coffees.price }} </h6>
+            </div>
+            <div>
+              <h5> ({{ coffees.votes }} voltes) </h5>
+            </div>
+          </mat-card-content>
+
+          <mat-card-actions>
+
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
