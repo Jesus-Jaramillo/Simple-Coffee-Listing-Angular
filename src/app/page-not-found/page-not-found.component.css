@@ -1,0 +1,10 @@
+.page-not-found{
+    color: white;
+    padding: 290px 0;
+    display: grid;
+    text-align: center;
+}
+
+.image-not-found{
+    margin-left: 410px;
+}

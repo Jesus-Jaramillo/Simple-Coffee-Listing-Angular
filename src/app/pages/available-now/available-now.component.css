@@ -130,7 +130,6 @@
     font-family: "Inter", sans-serif !important;
 }
 
-
 .activestyle-button {
     box-shadow: inset 0 1px 0 0 #6F757C;
     background: #bddbfa linear-gradient(to bottom, #6F757C 5%, #6F757C 100%);
@@ -138,7 +137,6 @@
     color: #ffffff;
     text-shadow: 0 1px 0 #6F757C;
 }
-
 
 /* STYLES IMPORTS OF ANGULAR MATERIAL: BUTTONS */
 section {
