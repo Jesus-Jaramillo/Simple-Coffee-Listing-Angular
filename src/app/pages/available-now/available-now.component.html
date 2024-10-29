@@ -28,41 +28,44 @@
 
         </div>
         <div class="principal-coffee">
-            <div *ngFor="let coffees of data">
-                <mat-card class="coffee-cards" appearance="outlined">
-                    <img mat-card-image src="{{ coffees.image }}" alt="{{ coffees.name }}" class="img-content">
-                    <mat-card-content>
-                        <div class="controller-content">
-                            <h5> {{ coffees.name }} </h5>
-                            <h6 class="controller-price"> {{ coffees.price }} </h6>
+            <ng-container *ngFor="let coffees of data">
+                <div *ngIf="coffees.available === true">
+                    <mat-card class="coffee-cards" appearance="outlined">
+                        <img mat-card-image src="{{ coffees.image }}" alt="{{ coffees.name }}" class="img-content">
+                        <div>
+                            <h6 class="controller-popular" *ngIf="coffees.popular == true"> Popular </h6>
                         </div>
-
-                        <img *ngIf="coffees.rating; else noRating" src="../../../assets/icons/Star_fill.svg"
-                            alt="Star_fill" class='controller-star'>
-                        <ng-template #noRating>
-                            <img src="../../../assets/icons/Star.svg" alt="Star" class='controller-star'>
-                        </ng-template>
-
-                        <div class='controller-rating'>
-
-                            <div [ngStyle]="{ color: coffees?.rating ? '#FEF7EE' : '#6F757C' }">
-                                <h6> {{ coffees?.rating ? coffees.rating : 'No rating' }} </h6>
+                        <mat-card-content>
+                            <div class="controller-content">
+                                <h5> {{ coffees.name }} </h5>
+                                <h6 class="controller-price"> {{ coffees.price }} </h6>
                             </div>
-                            <div class="controller-votes" *ngIf="coffees?.votes">
-                                <h6> ({{ coffees.votes }} votes) </h6>
+
+                            <img *ngIf="coffees.rating; else noRating" src="../../../assets/icons/Star_fill.svg"
+                                alt="Star_fill" class='controller-star'>
+                            <ng-template #noRating>
+                                <img src="../../../assets/icons/Star.svg" alt="Star" class='controller-star'>
+                            </ng-template>
+
+                            <div class='controller-rating'>
+
+                                <div [ngStyle]="{ color: coffees?.rating ? '#FEF7EE' : '#6F757C' }">
+                                    <h6> {{ coffees?.rating ? coffees.rating : 'No rating' }} </h6>
+                                </div>
+                                <div class="controller-votes" *ngIf="coffees?.votes">
+                                    <h6> ({{ coffees.votes }} votes) </h6>
+                                </div>
+                                <div class="controller-available" *ngIf="coffees.available === false">
+                                    <p> sold out </p>
+                                </div>
                             </div>
-                            <div class="controller-available" *ngIf="coffees.available === false">
-                                <p> sold out </p>
-                            </div>
-                        </div>
-
-                    </mat-card-content>
-
-                    <mat-card-actions>
-
-                    </mat-card-actions>
-                </mat-card>
-            </div>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button (click)="openDialog(coffees)" class="button_modal"> <img src="../../../assets/icons/preReview.svg" alt="" height="33" width="33"> </button>
+                          </mat-card-actions>
+                    </mat-card>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>

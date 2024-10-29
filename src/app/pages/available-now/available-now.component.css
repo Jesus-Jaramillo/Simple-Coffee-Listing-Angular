@@ -9,10 +9,10 @@
 
 .principal-coffee {
     margin-top: 20px;
-    display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)) !important; /* Esto creará columnas que se ajusten al tamaño de las tarjetas */
-    gap: 20px !important; /* Espacio entre las tarjetas */
-    padding: 60px !important; /* Padding alrededor del grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Esto creará columnas que se ajusten al tamaño de las tarjetas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 60px; /* Padding alrededor del grid */
 }
 
 .tittle-content{
@@ -119,7 +119,7 @@
 
 .vector{
     position: absolute;
-    margin: 40px 0 0 890px;
+    margin: 42px 0 0 840px;
 }
 
 .controller-available{
@@ -136,6 +136,23 @@
     border: 1px solid #6F757C;
     color: #ffffff;
     text-shadow: 0 1px 0 #6F757C;
+}
+
+.controller-popular{
+    background-color: #F6C768;
+    position: absolute;
+    max-width: 60px;
+    margin: -180px 10px;
+    padding: 3px 8px !important;
+    border-radius: 50px;
+    color: #111315;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: "Inter", sans-serif !important;
+}
+
+.button_modal{
+    margin: 0 278px;
 }
 
 /* STYLES IMPORTS OF ANGULAR MATERIAL: BUTTONS */

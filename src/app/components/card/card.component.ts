@@ -7,6 +7,8 @@ import { Router, RouterLinkActive, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { DialogAnimationsExampleComponent, DialogAnimationsExampleDialog } from '../dialog-animations-example/dialog-animations-example.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 
@@ -19,8 +21,9 @@ import { MatDividerModule } from '@angular/material/divider';
     MatCardModule,
     MatDividerModule,
     RouterLinkActive,
-    RouterLink
-  ],
+    RouterLink,
+    DialogAnimationsExampleComponent
+],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
@@ -30,6 +33,7 @@ export class CardComponent {
 
   constructor(private router: Router,
     private apiService: ApiService,
+    public dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -47,11 +51,19 @@ export class CardComponent {
     )
   }
 
-  routerAllProducts() {
+/*   routerAllProducts() {
     this.router.navigate([""])
   }
 
   routerAvailableNow() {
     this.router.navigate(['/availableNow'])
-  }
+  } */
+
+    openDialog(coffee: any): void {
+      this.dialog.open(DialogAnimationsExampleDialog, {
+        width: '300px',
+        data: coffee // Aquí pasamos la data
+      });
+    }
+
 }

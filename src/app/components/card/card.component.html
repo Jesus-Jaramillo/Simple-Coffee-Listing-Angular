@@ -15,7 +15,7 @@
         batches and shipped fresh weekly.
       </h5>
 
-<!--       <a href=""> <button type="button" class="btn btn-secondary style-button"> All products </button> </a>
+      <!--       <a href=""> <button type="button" class="btn btn-secondary style-button"> All products </button> </a>
       <a href="availableNow"> <button type="button" class="btn btn-secondary style-button"> Available now </button> </a> -->
 
       <a class="btn btn-secondary style-button" routerLink="" routerLinkActive="activestyle-button">
@@ -31,6 +31,9 @@
       <div *ngFor="let coffees of data">
         <mat-card class="coffee-cards" appearance="outlined">
           <img mat-card-image src="{{ coffees.image }}" alt="{{ coffees.name }}" class="img-content">
+          <div>
+            <h6 class="controller-popular" *ngIf="coffees.popular == true"> Popular </h6>
+          </div>
           <mat-card-content>
             <div class="controller-content">
               <h5> {{ coffees.name }} </h5>
@@ -55,11 +58,9 @@
                 <p> sold out </p>
               </div>
             </div>
-
           </mat-card-content>
-
           <mat-card-actions>
-
+            <button mat-button (click)="openDialog(coffees)" class="button_modal"> <img src="../../../assets/icons/preReview.svg" alt="" height="33" width="33"> </button>
           </mat-card-actions>
         </mat-card>
       </div>
